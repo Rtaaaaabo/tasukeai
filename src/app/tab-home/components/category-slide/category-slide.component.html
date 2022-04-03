@@ -1,0 +1,9 @@
+<div class="story-list">
+  <div class="scroll-horizontal">
+    <div class="scroll-item" *ngFor="let item of categoryArrayNpo">
+      <ion-button (click)="onClickCategory(item)" size="small">{{
+        item.name
+      }}</ion-button>
+    </div>
+  </div>
+</div>

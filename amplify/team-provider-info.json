@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tasukeai-dev-223755-authRole",
+      "UnauthRoleArn": "arn:aws:iam::136164370018:role/amplify-tasukeai-dev-223755-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::136164370018:role/amplify-tasukeai-dev-223755-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-tasukeai-dev-223755-deployment",
+      "UnauthRoleName": "amplify-tasukeai-dev-223755-unauthRole",
+      "StackName": "amplify-tasukeai-dev-223755",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:136164370018:stack/amplify-tasukeai-dev-223755/4746c300-b353-11ec-8845-0698042b59e3",
+      "AmplifyAppId": "d90d0rcubfeme"
+    }
+  }
+}
