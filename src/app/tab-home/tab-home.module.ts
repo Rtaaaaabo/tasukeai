@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { TabHomePage } from '@/tab-home/tab-home.page';
 import { CategorySlideComponent } from '@/tab-home/components/category-slide/category-slide.component';
 import { TabHomePageRoutingModule } from '@/tab-home/tab-home-routing.module';
+import { ListTimelineComponent } from '@/tab-home/components/list-timeline/list-timeline.component';
 
 @NgModule({
   imports: [
@@ -13,10 +14,14 @@ import { TabHomePageRoutingModule } from '@/tab-home/tab-home-routing.module';
     FormsModule,
     TabHomePageRoutingModule
   ],
-  exports: [CategorySlideComponent],
+  exports: [
+    CategorySlideComponent,
+    ListTimelineComponent,
+  ],
   declarations: [
     TabHomePage,
-    CategorySlideComponent
+    CategorySlideComponent,
+    ListTimelineComponent
   ]
 })
 export class TabHomePageModule { }
