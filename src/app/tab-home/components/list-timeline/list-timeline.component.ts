@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-list-timeline',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListTimelineComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  public navigateToDetail(orgId: number): void {
+    this.router.navigate(['detail-org', orgId], { relativeTo: this.route });
+  }
 
 }
