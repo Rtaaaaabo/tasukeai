@@ -13,6 +13,7 @@
     "target": "es2015",
     "module": "es2020",
     "paths": {
+      "@/assets/*": ["./assets/*"],
       "@/tab-home/*": ["./app/tab-home/*"],
       "@/tab-chat/*": ["./app/tab-chat/*"],
     },

@@ -3,8 +3,8 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TabChatPage } from './tab-chat.page';
-
+import { TabChatPage } from '@/tab-chat/tab-chat.page';
+import { ListChatComponent } from '@/tab-chat/components/list-chat/list-chat.component';
 import { TabChatPageRoutingModule } from '@/tab-chat/tab-chat-routing.module';
 
 @NgModule({
@@ -15,6 +15,7 @@ import { TabChatPageRoutingModule } from '@/tab-chat/tab-chat-routing.module';
     RouterModule,
     TabChatPageRoutingModule
   ],
-  declarations: [TabChatPage]
+  exports: [ListChatComponent],
+  declarations: [TabChatPage, ListChatComponent]
 })
 export class TabChatPageModule { }
