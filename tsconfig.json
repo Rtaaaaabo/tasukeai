@@ -14,6 +14,7 @@
     "module": "es2020",
     "paths": {
       "@/tab-home/*": ["./app/tab-home/*"],
+      "@/tab-chat/*": ["./app/tab-chat/*"],
     },
     "lib": ["es2018", "dom"],
   },
