@@ -6,6 +6,7 @@ import { TabHomePage } from '@/tab-home/tab-home.page';
 import { CategorySlideComponent } from '@/tab-home/components/category-slide/category-slide.component';
 import { TabHomePageRoutingModule } from '@/tab-home/tab-home-routing.module';
 import { ListTimelineComponent } from '@/tab-home/components/list-timeline/list-timeline.component';
+import { ModalDetailOrganizationComponent } from '@/tab-home/components/modal-detail-organization/modal-detail-organization.component';
 
 @NgModule({
   imports: [
@@ -17,11 +18,13 @@ import { ListTimelineComponent } from '@/tab-home/components/list-timeline/list-
   exports: [
     CategorySlideComponent,
     ListTimelineComponent,
+    ModalDetailOrganizationComponent,
   ],
   declarations: [
     TabHomePage,
     CategorySlideComponent,
-    ListTimelineComponent
+    ListTimelineComponent,
+    ModalDetailOrganizationComponent
   ]
 })
 export class TabHomePageModule { }

@@ -1,0 +1,17 @@
+ion-icon {
+    --ionicon-stroke-width: 16px;
+}
+
+.content {
+    &__item {
+        &__icon {
+            margin-right: 8px;
+        }
+    }
+}
+
+.footer {
+    &__toolbar {
+        --padding-top: 1px
+    }
+}

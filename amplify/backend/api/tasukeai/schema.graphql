@@ -9,3 +9,39 @@ type Category @model {
   name: String!
   description: String
 }
+
+type User @model {
+  id: String!
+  name: String!
+  email: String!
+  phone: Int
+}
+
+type Organization @model {
+  id: ID!
+  # 所轄庁
+  CompetentAuthority: String!
+  # 名称
+  name: String!
+  # 住所
+  address: String!
+  # 代表者名
+  representativeName: String!
+  # 設立年月日
+  establishmentDate: AWSDate!
+  # 目的
+  purpose: String!
+  # 活動分野
+  activityAreas: [ActivityAreas]!
+  # 法人番号
+  corporateNumber: Int!
+  #登録日時
+  registeredDate: AWSDateTime!
+  #ウェブサイト
+  website: String
+}
+
+type ActivityAreas @model {
+  id: ID!
+  value: String!
+}
