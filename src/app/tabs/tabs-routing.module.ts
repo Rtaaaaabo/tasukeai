@@ -12,7 +12,7 @@ const routes: Routes = [
         loadChildren: () => import('../tab-home/tab-home.module').then(m => m.TabHomePageModule)
       },
       {
-        path: 'tab2',
+        path: 'tab-chat',
         loadChildren: () => import('../tab-chat/tab-chat.module').then(m => m.TabChatPageModule)
       },
       {

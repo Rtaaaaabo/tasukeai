@@ -5,13 +5,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TabChatPage } from './tab-chat.page';
 
-import { TabChatPageRoutingModule } from './tab-chat-routing.module';
+import { TabChatPageRoutingModule } from '@/tab-chat/tab-chat-routing.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
+    RouterModule,
     TabChatPageRoutingModule
   ],
   declarations: [TabChatPage]
