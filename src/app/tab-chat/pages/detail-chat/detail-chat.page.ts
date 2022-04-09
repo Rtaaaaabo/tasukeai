@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detail-chat',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailChatPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private location: Location,
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(
+  ) {
   }
 
+  public backToListChatPage(): void {
+    this.location.back();
+  }
 }

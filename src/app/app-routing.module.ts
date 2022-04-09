@@ -5,6 +5,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'detail-chat',
+    loadChildren: () => import('./tab-chat/pages/detail-chat/detail-chat.module').then(m => m.DetailChatPageModule),
   }
 ];
 @NgModule({
@@ -13,4 +17,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
