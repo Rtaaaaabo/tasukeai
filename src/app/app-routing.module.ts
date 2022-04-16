@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'detail-chat',
     loadChildren: () => import('./tab-chat/pages/detail-chat/detail-chat.module').then(m => m.DetailChatPageModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./features/login/login.module').then( m => m.LoginPageModule)
   }
 ];
 @NgModule({
