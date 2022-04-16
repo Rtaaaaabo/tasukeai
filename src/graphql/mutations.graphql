@@ -8,6 +8,16 @@ mutation CreateCategory(
     value
     name
     description
+    organization {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -21,6 +31,16 @@ mutation UpdateCategory(
     value
     name
     description
+    organization {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -34,6 +54,1756 @@ mutation DeleteCategory(
     value
     name
     description
+    organization {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateActivityArea(
+  $input: CreateActivityAreaInput!
+  $condition: ModelActivityAreaConditionInput
+) {
+  createActivityArea(input: $input, condition: $condition) {
+    id
+    value
+    name
+    organization {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateActivityArea(
+  $input: UpdateActivityAreaInput!
+  $condition: ModelActivityAreaConditionInput
+) {
+  updateActivityArea(input: $input, condition: $condition) {
+    id
+    value
+    name
+    organization {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteActivityArea(
+  $input: DeleteActivityAreaInput!
+  $condition: ModelActivityAreaConditionInput
+) {
+  deleteActivityArea(input: $input, condition: $condition) {
+    id
+    value
+    name
+    organization {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateOrganization(
+  $input: CreateOrganizationInput!
+  $condition: ModelOrganizationConditionInput
+) {
+  createOrganization(input: $input, condition: $condition) {
+    id
+    CompetentAuthority
+    name
+    address
+    representativeName
+    establishmentDate
+    purpose
+    activityAreas {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    corporateNumber
+    registeredDate
+    website
+    categories {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    users {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    members {
+      items {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      nextToken
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateOrganization(
+  $input: UpdateOrganizationInput!
+  $condition: ModelOrganizationConditionInput
+) {
+  updateOrganization(input: $input, condition: $condition) {
+    id
+    CompetentAuthority
+    name
+    address
+    representativeName
+    establishmentDate
+    purpose
+    activityAreas {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    corporateNumber
+    registeredDate
+    website
+    categories {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    users {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    members {
+      items {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      nextToken
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteOrganization(
+  $input: DeleteOrganizationInput!
+  $condition: ModelOrganizationConditionInput
+) {
+  deleteOrganization(input: $input, condition: $condition) {
+    id
+    CompetentAuthority
+    name
+    address
+    representativeName
+    establishmentDate
+    purpose
+    activityAreas {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    corporateNumber
+    registeredDate
+    website
+    categories {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    users {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    members {
+      items {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      nextToken
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateMember(
+  $input: CreateMemberInput!
+  $condition: ModelMemberConditionInput
+) {
+  createMember(input: $input, condition: $condition) {
+    id
+    orgId
+    firstName
+    lastName
+    email
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    createdAt
+    updatedAt
+    memberUserId
+    organizationMembersId
+  }
+}
+mutation UpdateMember(
+  $input: UpdateMemberInput!
+  $condition: ModelMemberConditionInput
+) {
+  updateMember(input: $input, condition: $condition) {
+    id
+    orgId
+    firstName
+    lastName
+    email
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    createdAt
+    updatedAt
+    memberUserId
+    organizationMembersId
+  }
+}
+mutation DeleteMember(
+  $input: DeleteMemberInput!
+  $condition: ModelMemberConditionInput
+) {
+  deleteMember(input: $input, condition: $condition) {
+    id
+    orgId
+    firstName
+    lastName
+    email
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    createdAt
+    updatedAt
+    memberUserId
+    organizationMembersId
+  }
+}
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    email
+    phoneNumber
+    organization {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    member {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    userMemberId
+  }
+}
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    email
+    phoneNumber
+    organization {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    member {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    userMemberId
+  }
+}
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    email
+    phoneNumber
+    organization {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    member {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    userMemberId
+  }
+}
+mutation CreateRoom(
+  $input: CreateRoomInput!
+  $condition: ModelRoomConditionInput
+) {
+  createRoom(input: $input, condition: $condition) {
+    id
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    members {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    chatMessage {
+      items {
+        id
+        createdAt
+        updateAt
+        content
+        updatedAt
+        roomChatMessageId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    organizationRoomId
+    userRoomId
+  }
+}
+mutation UpdateRoom(
+  $input: UpdateRoomInput!
+  $condition: ModelRoomConditionInput
+) {
+  updateRoom(input: $input, condition: $condition) {
+    id
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    members {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    chatMessage {
+      items {
+        id
+        createdAt
+        updateAt
+        content
+        updatedAt
+        roomChatMessageId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    organizationRoomId
+    userRoomId
+  }
+}
+mutation DeleteRoom(
+  $input: DeleteRoomInput!
+  $condition: ModelRoomConditionInput
+) {
+  deleteRoom(input: $input, condition: $condition) {
+    id
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    members {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    chatMessage {
+      items {
+        id
+        createdAt
+        updateAt
+        content
+        updatedAt
+        roomChatMessageId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    organizationRoomId
+    userRoomId
+  }
+}
+mutation CreateChatMessage(
+  $input: CreateChatMessageInput!
+  $condition: ModelChatMessageConditionInput
+) {
+  createChatMessage(input: $input, condition: $condition) {
+    id
+    createdAt
+    updateAt
+    content
+    room {
+      id
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      members {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      chatMessage {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRoomId
+      userRoomId
+    }
+    updatedAt
+    roomChatMessageId
+  }
+}
+mutation UpdateChatMessage(
+  $input: UpdateChatMessageInput!
+  $condition: ModelChatMessageConditionInput
+) {
+  updateChatMessage(input: $input, condition: $condition) {
+    id
+    createdAt
+    updateAt
+    content
+    room {
+      id
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      members {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      chatMessage {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRoomId
+      userRoomId
+    }
+    updatedAt
+    roomChatMessageId
+  }
+}
+mutation DeleteChatMessage(
+  $input: DeleteChatMessageInput!
+  $condition: ModelChatMessageConditionInput
+) {
+  deleteChatMessage(input: $input, condition: $condition) {
+    id
+    createdAt
+    updateAt
+    content
+    room {
+      id
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      members {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      chatMessage {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRoomId
+      userRoomId
+    }
+    updatedAt
+    roomChatMessageId
+  }
+}
+mutation CreateCategoryTags(
+  $input: CreateCategoryTagsInput!
+  $condition: ModelCategoryTagsConditionInput
+) {
+  createCategoryTags(input: $input, condition: $condition) {
+    id
+    categoryID
+    organizationID
+    category {
+      id
+      value
+      name
+      description
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateCategoryTags(
+  $input: UpdateCategoryTagsInput!
+  $condition: ModelCategoryTagsConditionInput
+) {
+  updateCategoryTags(input: $input, condition: $condition) {
+    id
+    categoryID
+    organizationID
+    category {
+      id
+      value
+      name
+      description
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteCategoryTags(
+  $input: DeleteCategoryTagsInput!
+  $condition: ModelCategoryTagsConditionInput
+) {
+  deleteCategoryTags(input: $input, condition: $condition) {
+    id
+    categoryID
+    organizationID
+    category {
+      id
+      value
+      name
+      description
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateActivityAreaTags(
+  $input: CreateActivityAreaTagsInput!
+  $condition: ModelActivityAreaTagsConditionInput
+) {
+  createActivityAreaTags(input: $input, condition: $condition) {
+    id
+    activityAreaID
+    organizationID
+    activityArea {
+      id
+      value
+      name
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateActivityAreaTags(
+  $input: UpdateActivityAreaTagsInput!
+  $condition: ModelActivityAreaTagsConditionInput
+) {
+  updateActivityAreaTags(input: $input, condition: $condition) {
+    id
+    activityAreaID
+    organizationID
+    activityArea {
+      id
+      value
+      name
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteActivityAreaTags(
+  $input: DeleteActivityAreaTagsInput!
+  $condition: ModelActivityAreaTagsConditionInput
+) {
+  deleteActivityAreaTags(input: $input, condition: $condition) {
+    id
+    activityAreaID
+    organizationID
+    activityArea {
+      id
+      value
+      name
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateOrganizationTags(
+  $input: CreateOrganizationTagsInput!
+  $condition: ModelOrganizationTagsConditionInput
+) {
+  createOrganizationTags(input: $input, condition: $condition) {
+    id
+    organizationID
+    userID
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateOrganizationTags(
+  $input: UpdateOrganizationTagsInput!
+  $condition: ModelOrganizationTagsConditionInput
+) {
+  updateOrganizationTags(input: $input, condition: $condition) {
+    id
+    organizationID
+    userID
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteOrganizationTags(
+  $input: DeleteOrganizationTagsInput!
+  $condition: ModelOrganizationTagsConditionInput
+) {
+  deleteOrganizationTags(input: $input, condition: $condition) {
+    id
+    organizationID
+    userID
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
     createdAt
     updatedAt
   }

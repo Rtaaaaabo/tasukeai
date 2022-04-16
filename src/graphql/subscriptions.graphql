@@ -5,6 +5,16 @@ subscription OnCreateCategory {
     value
     name
     description
+    organization {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -15,6 +25,16 @@ subscription OnUpdateCategory {
     value
     name
     description
+    organization {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -25,6 +45,1675 @@ subscription OnDeleteCategory {
     value
     name
     description
+    organization {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateActivityArea {
+  onCreateActivityArea {
+    id
+    value
+    name
+    organization {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateActivityArea {
+  onUpdateActivityArea {
+    id
+    value
+    name
+    organization {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteActivityArea {
+  onDeleteActivityArea {
+    id
+    value
+    name
+    organization {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateOrganization {
+  onCreateOrganization {
+    id
+    CompetentAuthority
+    name
+    address
+    representativeName
+    establishmentDate
+    purpose
+    activityAreas {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    corporateNumber
+    registeredDate
+    website
+    categories {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    users {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    members {
+      items {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      nextToken
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateOrganization {
+  onUpdateOrganization {
+    id
+    CompetentAuthority
+    name
+    address
+    representativeName
+    establishmentDate
+    purpose
+    activityAreas {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    corporateNumber
+    registeredDate
+    website
+    categories {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    users {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    members {
+      items {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      nextToken
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteOrganization {
+  onDeleteOrganization {
+    id
+    CompetentAuthority
+    name
+    address
+    representativeName
+    establishmentDate
+    purpose
+    activityAreas {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    corporateNumber
+    registeredDate
+    website
+    categories {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    users {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    members {
+      items {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      nextToken
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateMember {
+  onCreateMember {
+    id
+    orgId
+    firstName
+    lastName
+    email
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    createdAt
+    updatedAt
+    memberUserId
+    organizationMembersId
+  }
+}
+subscription OnUpdateMember {
+  onUpdateMember {
+    id
+    orgId
+    firstName
+    lastName
+    email
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    createdAt
+    updatedAt
+    memberUserId
+    organizationMembersId
+  }
+}
+subscription OnDeleteMember {
+  onDeleteMember {
+    id
+    orgId
+    firstName
+    lastName
+    email
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    createdAt
+    updatedAt
+    memberUserId
+    organizationMembersId
+  }
+}
+subscription OnCreateUser {
+  onCreateUser {
+    id
+    firstName
+    lastName
+    email
+    phoneNumber
+    organization {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    member {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    userMemberId
+  }
+}
+subscription OnUpdateUser {
+  onUpdateUser {
+    id
+    firstName
+    lastName
+    email
+    phoneNumber
+    organization {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    member {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    userMemberId
+  }
+}
+subscription OnDeleteUser {
+  onDeleteUser {
+    id
+    firstName
+    lastName
+    email
+    phoneNumber
+    organization {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    member {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    userMemberId
+  }
+}
+subscription OnCreateRoom {
+  onCreateRoom {
+    id
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    members {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    chatMessage {
+      items {
+        id
+        createdAt
+        updateAt
+        content
+        updatedAt
+        roomChatMessageId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    organizationRoomId
+    userRoomId
+  }
+}
+subscription OnUpdateRoom {
+  onUpdateRoom {
+    id
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    members {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    chatMessage {
+      items {
+        id
+        createdAt
+        updateAt
+        content
+        updatedAt
+        roomChatMessageId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    organizationRoomId
+    userRoomId
+  }
+}
+subscription OnDeleteRoom {
+  onDeleteRoom {
+    id
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    members {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    chatMessage {
+      items {
+        id
+        createdAt
+        updateAt
+        content
+        updatedAt
+        roomChatMessageId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    organizationRoomId
+    userRoomId
+  }
+}
+subscription OnCreateChatMessage {
+  onCreateChatMessage {
+    id
+    createdAt
+    updateAt
+    content
+    room {
+      id
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      members {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      chatMessage {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRoomId
+      userRoomId
+    }
+    updatedAt
+    roomChatMessageId
+  }
+}
+subscription OnUpdateChatMessage {
+  onUpdateChatMessage {
+    id
+    createdAt
+    updateAt
+    content
+    room {
+      id
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      members {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      chatMessage {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRoomId
+      userRoomId
+    }
+    updatedAt
+    roomChatMessageId
+  }
+}
+subscription OnDeleteChatMessage {
+  onDeleteChatMessage {
+    id
+    createdAt
+    updateAt
+    content
+    room {
+      id
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      members {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      chatMessage {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRoomId
+      userRoomId
+    }
+    updatedAt
+    roomChatMessageId
+  }
+}
+subscription OnCreateCategoryTags {
+  onCreateCategoryTags {
+    id
+    categoryID
+    organizationID
+    category {
+      id
+      value
+      name
+      description
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateCategoryTags {
+  onUpdateCategoryTags {
+    id
+    categoryID
+    organizationID
+    category {
+      id
+      value
+      name
+      description
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteCategoryTags {
+  onDeleteCategoryTags {
+    id
+    categoryID
+    organizationID
+    category {
+      id
+      value
+      name
+      description
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateActivityAreaTags {
+  onCreateActivityAreaTags {
+    id
+    activityAreaID
+    organizationID
+    activityArea {
+      id
+      value
+      name
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateActivityAreaTags {
+  onUpdateActivityAreaTags {
+    id
+    activityAreaID
+    organizationID
+    activityArea {
+      id
+      value
+      name
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteActivityAreaTags {
+  onDeleteActivityAreaTags {
+    id
+    activityAreaID
+    organizationID
+    activityArea {
+      id
+      value
+      name
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateOrganizationTags {
+  onCreateOrganizationTags {
+    id
+    organizationID
+    userID
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateOrganizationTags {
+  onUpdateOrganizationTags {
+    id
+    organizationID
+    userID
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteOrganizationTags {
+  onDeleteOrganizationTags {
+    id
+    organizationID
+    userID
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
     createdAt
     updatedAt
   }

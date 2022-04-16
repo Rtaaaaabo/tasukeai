@@ -8,13 +8,14 @@ type Category @model {
   value: Int!
   name: String!
   description: String
+  organization: [Organization] @manyToMany(relationName: "CategoryTags")
 }
 
-type User @model {
-  id: String!
+type ActivityArea @model {
+  id: ID!
+  value: Int!
   name: String!
-  email: String!
-  phone: Int
+  organization: [Organization] @manyToMany(relationName: "ActivityAreaTags")
 }
 
 type Organization @model {
@@ -32,16 +33,58 @@ type Organization @model {
   # 目的
   purpose: String!
   # 活動分野
-  activityAreas: [ActivityAreas]!
+  activityAreas: [ActivityArea]! @manyToMany(relationName: "ActivityAreaTags")
   # 法人番号
   corporateNumber: Int!
   #登録日時
   registeredDate: AWSDateTime!
   #ウェブサイト
   website: String
+  # カテゴリー
+  categories: [Category] @manyToMany(relationName: "CategoryTags")
+  # ユーザー
+  users: [User] @manyToMany(relationName: "OrganizationTags")
+  # 従業員
+  members: [Member] @hasMany
+  # 複数のルーム
+  room: [Room] @hasMany
 }
 
-type ActivityAreas @model {
+# NPO法人に属するメンバー
+type Member @model {
   id: ID!
-  value: String!
+  orgId: ID!
+  firstName: String!
+  lastName: String!
+  email: AWSEmail!
+  organization: Organization! @belongsTo
+  user: User @belongsTo
+}
+
+# ユーザー
+type User @model {
+  id: String!
+  firstName: String!
+  lastName: String!
+  email: AWSEmail!
+  phoneNumber: String!
+  organization: [Organization] @manyToMany(relationName: "OrganizationTags")
+  member: Member @hasOne
+  room: [Room] @hasMany
+}
+
+type Room @model {
+  id: ID!
+  organization: Organization! @belongsTo
+  user: User! @belongsTo
+  members: [Member]
+  chatMessage: [ChatMessage] @hasMany
+}
+
+type ChatMessage @model {
+  id: ID!
+  createdAt: AWSDateTime!
+  updateAt: AWSDateTime!
+  content: String!
+  room: Room! @belongsTo
 }

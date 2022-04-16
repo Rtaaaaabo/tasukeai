@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { TabChatPage } from '@/tab-chat/tab-chat.page';
 import { ListChatComponent } from '@/tab-chat/components/list-chat/list-chat.component';
 import { TabChatPageRoutingModule } from '@/tab-chat/tab-chat-routing.module';
+import { AutosizeModule } from 'ngx-autosize';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { TabChatPageRoutingModule } from '@/tab-chat/tab-chat-routing.module';
     CommonModule,
     FormsModule,
     RouterModule,
-    TabChatPageRoutingModule
+    TabChatPageRoutingModule,
+    AutosizeModule,
   ],
   exports: [ListChatComponent],
   declarations: [TabChatPage, ListChatComponent]

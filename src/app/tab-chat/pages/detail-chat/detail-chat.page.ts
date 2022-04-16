@@ -7,6 +7,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./detail-chat.page.scss'],
 })
 export class DetailChatPage implements OnInit {
+  public newMessage = '';
+
 
   constructor(
     private location: Location,
@@ -18,5 +20,8 @@ export class DetailChatPage implements OnInit {
 
   public backToListChatPage(): void {
     this.location.back();
+  }
+  public sendMessage(): void {
+
   }
 }

@@ -5,6 +5,16 @@ query GetCategory($id: ID!) {
     value
     name
     description
+    organization {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
     createdAt
     updatedAt
   }
@@ -20,6 +30,892 @@ query ListCategories(
       value
       name
       description
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetActivityArea($id: ID!) {
+  getActivityArea(id: $id) {
+    id
+    value
+    name
+    organization {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListActivityAreas(
+  $filter: ModelActivityAreaFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listActivityAreas(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      value
+      name
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetOrganization($id: ID!) {
+  getOrganization(id: $id) {
+    id
+    CompetentAuthority
+    name
+    address
+    representativeName
+    establishmentDate
+    purpose
+    activityAreas {
+      items {
+        id
+        activityAreaID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    corporateNumber
+    registeredDate
+    website
+    categories {
+      items {
+        id
+        categoryID
+        organizationID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    users {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    members {
+      items {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      nextToken
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListOrganizations(
+  $filter: ModelOrganizationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listOrganizations(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetMember($id: ID!) {
+  getMember(id: $id) {
+    id
+    orgId
+    firstName
+    lastName
+    email
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    createdAt
+    updatedAt
+    memberUserId
+    organizationMembersId
+  }
+}
+query ListMembers(
+  $filter: ModelMemberFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    nextToken
+  }
+}
+query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    firstName
+    lastName
+    email
+    phoneNumber
+    organization {
+      items {
+        id
+        organizationID
+        userID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    member {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    room {
+      items {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    userMemberId
+  }
+}
+query ListUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    nextToken
+  }
+}
+query GetRoom($id: ID!) {
+  getRoom(id: $id) {
+    id
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    members {
+      id
+      orgId
+      firstName
+      lastName
+      email
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      createdAt
+      updatedAt
+      memberUserId
+      organizationMembersId
+    }
+    chatMessage {
+      items {
+        id
+        createdAt
+        updateAt
+        content
+        updatedAt
+        roomChatMessageId
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    organizationRoomId
+    userRoomId
+  }
+}
+query ListRooms(
+  $filter: ModelRoomFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listRooms(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      members {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      chatMessage {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRoomId
+      userRoomId
+    }
+    nextToken
+  }
+}
+query GetChatMessage($id: ID!) {
+  getChatMessage(id: $id) {
+    id
+    createdAt
+    updateAt
+    content
+    room {
+      id
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
+      members {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      chatMessage {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      organizationRoomId
+      userRoomId
+    }
+    updatedAt
+    roomChatMessageId
+  }
+}
+query ListChatMessages(
+  $filter: ModelChatMessageFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listChatMessages(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      createdAt
+      updateAt
+      content
+      room {
+        id
+        createdAt
+        updatedAt
+        organizationRoomId
+        userRoomId
+      }
+      updatedAt
+      roomChatMessageId
+    }
+    nextToken
+  }
+}
+query GetCategoryTags($id: ID!) {
+  getCategoryTags(id: $id) {
+    id
+    categoryID
+    organizationID
+    category {
+      id
+      value
+      name
+      description
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListCategoryTags(
+  $filter: ModelCategoryTagsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCategoryTags(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      categoryID
+      organizationID
+      category {
+        id
+        value
+        name
+        description
+        createdAt
+        updatedAt
+      }
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetActivityAreaTags($id: ID!) {
+  getActivityAreaTags(id: $id) {
+    id
+    activityAreaID
+    organizationID
+    activityArea {
+      id
+      value
+      name
+      organization {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListActivityAreaTags(
+  $filter: ModelActivityAreaTagsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listActivityAreaTags(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      activityAreaID
+      organizationID
+      activityArea {
+        id
+        value
+        name
+        createdAt
+        updatedAt
+      }
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetOrganizationTags($id: ID!) {
+  getOrganizationTags(id: $id) {
+    id
+    organizationID
+    userID
+    organization {
+      id
+      CompetentAuthority
+      name
+      address
+      representativeName
+      establishmentDate
+      purpose
+      activityAreas {
+        nextToken
+      }
+      corporateNumber
+      registeredDate
+      website
+      categories {
+        nextToken
+      }
+      users {
+        nextToken
+      }
+      members {
+        nextToken
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      firstName
+      lastName
+      email
+      phoneNumber
+      organization {
+        nextToken
+      }
+      member {
+        id
+        orgId
+        firstName
+        lastName
+        email
+        createdAt
+        updatedAt
+        memberUserId
+        organizationMembersId
+      }
+      room {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      userMemberId
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListOrganizationTags(
+  $filter: ModelOrganizationTagsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listOrganizationTags(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      organizationID
+      userID
+      organization {
+        id
+        CompetentAuthority
+        name
+        address
+        representativeName
+        establishmentDate
+        purpose
+        corporateNumber
+        registeredDate
+        website
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        firstName
+        lastName
+        email
+        phoneNumber
+        createdAt
+        updatedAt
+        userMemberId
+      }
       createdAt
       updatedAt
     }
