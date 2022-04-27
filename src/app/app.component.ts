@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
+import { Auth } from 'aws-amplify';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
