@@ -16,6 +16,8 @@
       "@/assets/*": ["./assets/*"],
       "@/tab-home/*": ["./app/tab-home/*"],
       "@/tab-chat/*": ["./app/tab-chat/*"],
+      "@/features/*": ["./app/features/*"],
+      "@/shared/*": ["./app/shared/*"],
     },
     "lib": ["es2018", "dom"],
   },
