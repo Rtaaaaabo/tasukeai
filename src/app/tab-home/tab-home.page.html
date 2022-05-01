@@ -9,7 +9,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- <app-category-slide
+  (emitChooseCategory)="chooseCategory($event)"
+  #categoryControl
+></app-category-slide> -->
+
+<!-- <ion-content
+  fullscreen="true"
+  scrollEvents="true"
+  [appHideHeader]="header"
+  [appCategorySlide]="categoryControl"
+> -->
+<ion-content fullscreen="true" scrollEvents="true">
   <app-category-slide
     (emitChooseCategory)="chooseCategory($event)"
   ></app-category-slide>
