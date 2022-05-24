@@ -1,10 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon name="log-in-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>{{targetItem.name}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="location-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content fullscreen="true" scrollEvents="true">
   <app-category-slide
     (emitChooseCategory)="chooseCategory($event)"
   ></app-category-slide>

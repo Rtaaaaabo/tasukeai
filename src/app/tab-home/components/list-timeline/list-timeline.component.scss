@@ -1,0 +1,31 @@
+.list {
+  &__row {
+    border-bottom: 1px solid var(--ion-color-light);
+
+    &__col {
+      &__row {
+        &--info {
+          font-size: 0.9em;
+        }
+
+        &__col {
+          &__div {
+            &--name {
+              font-weight: 600;
+            }
+
+            &--date {
+              padding-left: 4px;
+              color: var(--ion-color-medium)
+            }
+          }
+
+          &--img {
+            border: 1px solid var(--ion-color-light);
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}

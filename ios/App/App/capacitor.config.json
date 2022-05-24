@@ -1,0 +1,11 @@
+{
+	"appId": "com.taku-cloud.tasukeai",
+	"appName": "tasukeai",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"splashScreen": {
+			"launchShowDuration": 0
+		}
+	}
+}

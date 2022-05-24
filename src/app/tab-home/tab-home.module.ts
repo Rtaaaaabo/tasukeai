@@ -7,13 +7,15 @@ import { CategorySlideComponent } from '@/tab-home/components/category-slide/cat
 import { TabHomePageRoutingModule } from '@/tab-home/tab-home-routing.module';
 import { ListTimelineComponent } from '@/tab-home/components/list-timeline/list-timeline.component';
 import { ModalDetailOrganizationComponent } from '@/tab-home/components/modal-detail-organization/modal-detail-organization.component';
+import { SharedModule } from '@/shared/shared.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    TabHomePageRoutingModule
+    TabHomePageRoutingModule,
+    SharedModule,
   ],
   exports: [
     CategorySlideComponent,
@@ -24,7 +26,7 @@ import { ModalDetailOrganizationComponent } from '@/tab-home/components/modal-de
     TabHomePage,
     CategorySlideComponent,
     ListTimelineComponent,
-    ModalDetailOrganizationComponent
+    ModalDetailOrganizationComponent,
   ]
 })
 export class TabHomePageModule { }
