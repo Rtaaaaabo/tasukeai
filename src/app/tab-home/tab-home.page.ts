@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Category } from '@/tab-home/models/category';
+import { Auth } from 'aws-amplify';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-tab-home',
@@ -13,6 +15,10 @@ export class TabHomePage {
 
   public chooseCategory(ev: Category): void {
     this.targetItem = ev;
+  }
+
+  public logout(): void {
+    of(Auth.signOut()).subscribe((data) => console.log('SignOut', data));
   }
 
 }

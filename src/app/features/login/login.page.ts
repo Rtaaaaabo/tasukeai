@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { of } from 'rxjs';
-import { concatMap } from 'rxjs/operators';
 import { Auth } from 'aws-amplify';
 
 @Component({
@@ -18,20 +17,14 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.imageZone = '../../../assets/img/btn_login_base.png';
-    of(Auth.currentAuthenticatedUser()).subscribe(data => console.log('Login', data));
   }
 
   public onClickLoginWithLine(): void {
     this.imageZone = '../../../assets/img/btn_login_press.png';
     of(Auth.federatedSignIn({ customProvider: 'LINE' }))
-      .pipe(concatMap(() => of(Auth.currentAuthenticatedUser())))
       .subscribe((data) => {
-        console.log('currentAuthenticatedUser', data);
+        this.imageZone = '../../../assets/img/btn_login_base.png';
+        console.log('ログインしているユーザー', data);
       });
   }
-
-  public navigateToSignUp(): void {
-
-  }
-
 }
